@@ -1,0 +1,21 @@
+name: Statusboard
+
+on:
+  push:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  refresh-projects:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+  download-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+  build-and-upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
